@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hamburgueria do Ottis</title>
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="./index.html"><img src="./imagens/logo.png.png" alt=""></a>
+            </div><!-- logo -->
+            <nav>
+                <ul class="leftside">
+                    <li><a href="">Início</a></li>
+                    <li><a href="">Burgers</a></li>
+                    <li><a href="">Reservas</a></li>
+                    <li><a href="">Contato</a></li>
+                </ul><!-- leftside -->
+                <div class="rightside">
+                    <a href="" class="btn">Fazer pedido</a>
+                </div><!-- rightside -->
+            </nav><!-- barra de navegação -->
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>            
+            </div>
+        </div><!-- container -->
+    </header>
+    <section class="hero">
+        <div class="container">
+            <div class="left-content">
+                <h1>Os melhores hamburgueres você encontra aqui!<span>&#128523;</span></h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde ex sequi ad alias.
+                </p>
+                <a href="" class="btn">Fazer pedido</a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+            <div class="products-grid">
+                <a href="" class="product-item">
+                    <div class="warning">Promoção</div>
+                    <div class="photo">
+                        <img src="./imagens/bacon-duplo.jpg" alt="hamburguer">
+                    </div>
+                    <div class="info">
+                        <div class="product-category">Tradicional</div>
+                        <div class="product-name">Big Cheddar Bacon</div>
+                        <div class="product-price">R$ 24,90</div>
+                    </div>
+                </a>
+                <a href="" class="product-item">
+                    <div class="photo">
+                        <img src="./imagens/cheddar.jpg" alt="hamburguer">
+                    </div>
+                    <div class="info">
+                        <div class="product-category">Gourmet</div>
+                        <div class="product-name">Smash BBQ</div>
+                        <div class="product-price">R$ 28,90</div>
+                    </div>
+                </a>
+                <a href="" class="product-item">
+                    <div class="photo">
+                        <img src="./imagens/classico.jpg" alt="hamburguer">
+                    </div>
+                    <div class="info">
+                        <div class="product-category">Clássico</div>
+                        <div class="product-name">Clássico do Ottis</div>
+                        <div class="product-price">R$ 26,50</div>
+                    </div>
+                </a>
+                <a href="" class="product-item">
+                    <div class="photo">
+                        <img src="./imagens/chicken-burguer.jpg" alt="hamburguer">
+                    </div>
+                    <div class="info">
+                        <div class="product-category">Frango</div>
+                        <div class="product-name">Crispy Chicken Supreme</div>
+                        <div class="product-price">R$ 23,90</div>
+                    </div>
+                </a>
+                <a href="" class="product-item">
+                    <div class="photo">
+                        <img src="./imagens/vegano.jpg" alt="hamburguer">
+                    </div>
+                    <div class="info">
+                        <div class="product-category">Vegetariano</div>
+                        <div class="product-name">Veggie Special</div>
+                        <div class="product-price">R$ 21,90</div>
+                    </div>
+                </a>
+                <a href="" class="product-item">
+                    <div class="photo">
+                        <img src="./imagens/bacon-duplo.jpg" alt="hamburguer">
+                    </div>
+                    <div class="info">
+                        <div class="product-category">Picante</div>
+                        <div class="product-name">Spicy Jalapeño Blast</div>
+                        <div class="product-price">R$ 27,50</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <section class="reservas">
+        <div class="container reservas-grid">
+            <div class="reservas-image">
+                <img src="./imagens/local.webp" alt="Imagem do nosso restaurante">
+            </div>
+            <div class="reservas-form-wrapper">
+                <h2 class="section-title">Faça sua Reserva</h2>
+                <p class="section-description">Garanta sua mesa e desfrute dos nossos deliciosos hambúrgueres sem espera!</p>
+                <form class="reservas-form">
+                    <div class="form-group inline-inputs">
+                        <div class="form-subgroup">
+                            <label for="data">Data:</label>
+                            <input type="date" id="data" name="data" required>
+                        </div>
+                        <div class="form-subgroup">
+                            <label for="hora">Hora:</label>
+                            <select id="hora" name="hora" required>
+                                <option value="" disabled selected>Selecione</option>
+                                <option value="12:00">12:00</option>
+                                <option value="12:30">12:30</option>
+                                <option value="13:00">13:00</option>
+                                <option value="19:00">19:00</option>
+                                <option value="19:30">19:30</option>
+                                <option value="20:00">20:00</option>
+                            </select>
+                        </div>
+                        <div class="form-subgroup">
+                            <label for="pessoas">Pessoas:</label>
+                            <input type="number" id="pessoas" name="pessoas" min="1" placeholder="Qtd." required>
+                        </div>
+                    </div>
+                    <div class="form-group inline-inputs">
+                        <div class="form-subgroup">
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                        </div>
+                        <div class="form-subgroup">
+                            <label for="telefone">Telefone:</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="Seu telefone">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+                    </div>
+                    <button type="submit" class="btn">Reservar Agora</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="localizacao-feedback">
+    <div class="container">
+        <h2 class="section-title">Onde nos encontrar e o que dizem de nós</h2>
+        <div class="localizacao-feedback-grid">
+            <div class="mapa-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.0916185318156!2d-38.47833532625098!3d-3.7902279434872215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c7458e0d298b81%3A0xf5bd8216a33ca105!2sR.%20Rangel%20Pestana%2C%201259%20-%20Lagoa%20Sapiranga%20(Coit%C3%A9)%2C%20Fortaleza%20-%20CE%2C%2060833-012!5e0!3m2!1spt-BR!2sbr!4v1747073240470!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="feedback-carrossel">
+                <div class="feedback-item ativo">
+                    <div class="cliente-info">
+                        <img src="./imagens/pessoa.webp" alt="Foto do Cliente 1" class="cliente-foto">
+                        <div class="cliente-nome">Cliente Feliz 1</div>
+                    </div>
+                    <div class="avaliacao">
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9734;</span>
+                        <span class="estrela">&#9734;</span>
+                    </div>
+                    <p class="depoimento">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="feedback-item">
+                    <div class="cliente-info">
+                        <img src="./imagens/pessoa.webp" alt="Foto do Cliente 2" class="cliente-foto">
+                        <div class="cliente-nome">Cliente Satisfeito 2</div>
+                    </div>
+                    <div class="avaliacao">
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9734;</span>
+                    </div>
+                    <p class="depoimento">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="feedback-item">
+                    <div class="cliente-info">
+                        <img src="./imagens/pessoa.webp" alt="Foto do Cliente 3" class="cliente-foto">
+                        <div class="cliente-nome">Super Fã de Burgers 3</div>
+                    </div>
+                    <div class="avaliacao">
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                    </div>
+                    <p class="depoimento">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                </div>
+                <div class="carrossel-nav">
+                    <button class="prev-btn">&#10094;</button>
+                    <button class="next-btn">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="logo">
+                <a href="./index.html"><img src="./imagens/logo.png.png" alt=""></a>
+            </div><!-- logo -->
+            <div class="copyright">Desenvolvido por <a href="https://github.com/Italodacostaa"
+                    target="_blank">Italo Costa</a>.
+            </div>
+        </div>
+
+
+    </footer>
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

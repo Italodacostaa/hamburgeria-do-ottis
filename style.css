@@ -1,0 +1,811 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rock+Salt&display=swap');
+
+
+/* Estilos globais */
+body {
+    font-family: 'Montserrat', sans-serif; /* Uma fonte moderna e legível */
+    margin: 0;
+    padding: 0;
+    background-color: #272727; /* Um fundo levemente acinzentado */
+    color: #333; /* Cor de texto padrão */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Espaçamento nas laterais em telas menores */
+}
+
+.btn {
+    display: inline-block;
+    background-color: #e63946; /* Uma cor vibrante para botões de ação */
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Transição suave na mudança de cor */
+}
+
+.btn:hover {
+    background-color: #c42e39; /* Um tom mais escuro no hover */
+}
+
+/* Cabeçalho */
+header {
+    background-color: #fff;
+    padding-bottom: 28px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Uma sombra sutil */
+    top: 0;
+    z-index: 100; /* Garante que o cabeçalho fique acima de outros elementos */
+    height: 5rem;
+    position: relative;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    height: 7rem; /* Ajuste a altura do logo conforme necessário */
+    width: 11vw;
+}
+
+nav {
+    display: flex;
+    padding-bottom: 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #e63946;
+}
+
+nav .rightside .btn {
+    height: 1.5rem;
+    margin-left: 30px;
+}
+
+.hamburger-menu {
+    display: none;
+    cursor:pointer;
+    z-index: 101;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Seção Hero */
+.hero {
+    padding: 80px 0;
+    background-image: url('./imagens/hamburguer.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero .left-content {
+    max-width: 50%;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: #ffffffe8;
+}
+
+.hero h1 span {
+    color: #e63946;
+}
+
+.hero p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px;
+    color: #ffffffe8;
+}
+
+/* Seção de Produtos */
+main {
+    padding: 80px 0;
+    background-color: #f4f4f4;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Layout responsivo em grid */
+    gap: 30px;
+}
+
+.product-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Garante que a imagem não vaze do border-radius */
+    text-decoration: none;
+    color: inherit; /* Herda a cor do texto do pai */
+    transition: transform 0.3s ease-in-out; /* Efeito de leve elevação ao passar o mouse */
+    position: relative;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+.product-item .warning {
+    background-color: #ff9f1c; /* Cor de destaque para promoções */
+    color: #fff;
+    padding: 8px 15px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    z-index: 1; /* Garante que a etiqueta fique acima da imagem */
+}
+
+.product-item .photo {
+    overflow: hidden; /* Garante que a imagem não vaze */
+    height: 200px;
+}
+
+.product-item .photo img {
+    width: 100%;
+    height: 100%;
+    display: block; /* Remove espaços extras abaixo da imagem */
+    transition: transform 0.3s ease-in-out; /* Efeito de zoom suave na imagem */
+    object-fit: cover;
+}
+
+.product-item:hover .photo img {
+    transform: scale(1.1);
+}
+
+.product-item .info {
+    padding: 20px;
+}
+
+.product-item .product-category {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.product-item .product-name {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-item .product-price {
+    font-size: 1.1em;
+    color: #e63946;
+    font-weight: bold;
+}
+
+/*Seção reservas */
+.reservas {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.reservas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* A imagem ocupará 1 parte e o formulário 1.5 */
+    gap: 30px;
+    max-width: 1000px; /* Ajuste a largura máxima conforme necessário */
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f0efef;
+    align-items: center; /* Alinha verticalmente os itens na grid */
+}
+
+.reservas-image img {
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+    height: 27rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.reservas .section-title {
+    font-size: 2.2em; /* Diminuindo um pouco o título */
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.reservas .section-description {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+
+.reservas-form .form-group {
+    margin-bottom: 15px; /* Diminuindo a margem entre os grupos */
+}
+
+.reservas-form .inline-inputs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px; /* Espaçamento entre as linhas de inputs */
+}
+
+.reservas-form .form-subgroup {
+    flex: 1; /* Faz os subgrupos ocuparem o espaço igualmente */
+}
+
+.reservas-form label {
+    display: block;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px; /* Diminuindo a margem abaixo do label */
+    font-size: 0.9em; /* Diminuindo um pouco o tamanho da fonte do label */
+}
+
+.reservas-form input[type="text"],
+.reservas-form input[type="email"],
+.reservas-form input[type="tel"],
+.reservas-form input[type="date"],
+.reservas-form input[type="number"],
+.reservas-form select {
+    width: 100%;
+    padding: 10px; /* Diminuindo o padding */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9em; /* Diminuindo o tamanho da fonte */
+    color: #555;
+    box-sizing: border-box;
+    appearance: none;
+    background-color: #fff;
+}
+
+.reservas-form select {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 8px center; /* Ajustando a posição do ícone */
+    background-size: 1em; /* Diminuindo o tamanho do ícone */
+}
+
+.reservas-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px; /* Diminuindo o padding do botão */
+    background-color: #e63946;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reservas-form button[type="submit"]:hover {
+    background-color: #c42e39;
+}
+
+/* Seção de Localização */
+.localizacao {
+    padding: 70px 0;
+    background-color: #fff; /* Mantendo o fundo branco para consistência */
+}
+
+.localizacao .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px; /* Adicionando um pouco de borda arredondada ao container */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Uma sombra mais suave e moderna */
+    background-color: #f9f9f9; /* Mantendo o fundo levemente acinzentado */
+}
+
+.localizacao .section-title {
+    font-size: 2.4em; /* Ligeiramente maior para destaque */
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.localizacao .mapa-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* Sombra mais definida para o mapa */
+    margin-bottom: 30px; /* Aumentando o espaço abaixo do mapa */
+}
+
+.localizacao .mapa-container iframe {
+    width: 100%;
+    height: 450px; /* Aumentando um pouco a altura padrão */
+    border: 0;
+    border-radius: 8px; /* Mantendo a borda arredondada no iframe também */
+}
+
+.localizacao .endereco {
+    color: #555;
+    line-height: 1.7; /* Ajustando a altura da linha para melhor leitura */
+    margin-top: 20px; /* Adicionando espaço acima do endereço */
+}
+
+.localizacao .endereco p {
+    margin-bottom: 10px; /* Espaçamento entre os parágrafos do endereço */
+    font-size: 1.05em; /* Ligeiramente maior para melhor legibilidade */
+}
+
+.localizacao .endereco strong {
+    font-weight: bold;
+    color: #e63946; /* Usando a cor primária para destacar informações importantes */
+}
+
+.localizacao-feedback {
+    padding: 70px 0;
+    background-color: #fff;
+}
+
+.localizacao-feedback .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.localizacao-feedback .section-title {
+    font-size: 2.6em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.localizacao-feedback-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.localizacao-feedback .mapa-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgb(0, 0, 0, 0.15);
+}
+
+.localizacao-feedback .mapa-container iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+    border-radius: 8px;
+}
+
+
+.feedback-carrossel {
+    position: relative; /* Essencial para posicionar os botões de navegação */
+    padding: 30px; /* Aumenta o padding interno para mais espaço */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Garante que os itens que não estão visíveis fiquem escondidos */
+    height: 100%; /* Permite que o carrossel se expanda verticalmente */
+    display: flex; /* Usamos flexbox para centralizar o conteúdo do item ativo */
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente o item ativo */
+    align-items: center; /* Centraliza horizontalmente o item ativo */
+    text-align: center; /* Centraliza o texto do depoimento */
+}
+
+.feedback-item {
+    display: none; /* Esconde todos os itens por padrão */
+    /* Remove a posição absoluta para que o flexbox do pai funcione */
+    width: 100%; /* Garante que o item ocupe a largura total disponível */
+    padding: 0 40px; /* Espaço para os botões de navegação não sobreporem o texto */
+    box-sizing: border-box; /* Inclui padding na largura total */
+}
+
+.feedback-item.ativo {
+    display: block; /* Exibe apenas o item ativo */
+}
+
+.cliente-info {
+    display: flex;
+    flex-direction: column; /* Empilha a foto e o nome */
+    align-items: center; /* Centraliza a foto e o nome */
+    margin-bottom: 20px; /* Aumenta o espaço abaixo das informações do cliente */
+}
+
+.cliente-foto {
+    width: 70px; /* Aumenta o tamanho da foto */
+    height: 70px; /* Aumenta o tamanho da foto */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px; /* Espaço entre a foto e o nome */
+    border: 3px solid #e63946; /* Adiciona uma borda colorida à foto */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cliente-nome {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.2em; /* Aumenta o tamanho da fonte do nome */
+}
+
+.avaliacao {
+    color: #ffc107; /* Cor amarela para as estrelas */
+    font-size: 1.5em; /* Aumenta o tamanho das estrelas */
+    margin-bottom: 15px; /* Mais espaço abaixo das estrelas */
+}
+
+.estrela {
+    margin-right: 3px; /* Ajusta o espaçamento entre as estrelas */
+}
+
+.depoimento {
+    color: #555;
+    line-height: 1.8; /* Aumenta o espaçamento entre as linhas para melhor leitura */
+    font-size: 1.1em; /* Aumenta um pouco o tamanho da fonte do depoimento */
+}
+
+.carrossel-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    transform: translateY(-50%);
+    width: 100%; /* Garante que os botões cubram a largura total */
+    box-sizing: border-box; /* Inclui padding na largura */
+}
+
+.carrossel-nav button {
+    background: rgba(255, 255, 255, 0.7); /* Fundo semi-transparente para o botão */
+    border: 1px solid #ddd; /* Borda sutil */
+    border-radius: 50%; /* Botões circulares */
+    width: 40px; /* Largura do botão */
+    height: 40px; /* Altura do botão */
+    font-size: 1.8em; /* Aumenta o tamanho da seta */
+    color: #888; /* Cor da seta */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex; /* Para centralizar o caractere da seta */
+    justify-content: center;
+    align-items: center;
+    line-height: 1; /* Ajuda no alinhamento vertical da seta */
+    padding: 0; /* Remove padding padrão */
+}
+
+.carrossel-nav button:hover {
+    background-color: #e63946; /* Cor do botão no hover */
+    color: #fff; /* Cor da seta no hover */
+    border-color: #e63946;
+}
+
+
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .logo img {
+    height: 7rem; /* Ajuste a altura do logo conforme necessário */
+    width: 11vw;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 600px) {
+    header .container {
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    nav {
+        display: none; /* Esconde a navegação em telas menores */
+        position: absolute;
+        flex-direction: column;
+        top: 100%; /* Abaixo do cabeçalho */
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        z-index: 99;
+        text-align: center;
+    }
+
+    nav.active {
+        display: flex; /* Mostra a navegação quando a classe 'active' é adicionada */
+        padding-top: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px 0;
+    }
+
+    nav .rightside {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav .rightside .btn {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    header .logo img {
+        height: 6rem; /* Ajuste a altura do logo conforme necessário */
+        width: 25vw;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero .left-content {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .reservas-grid {
+        grid-template-columns: 1fr; /* Volta para uma coluna */
+    }
+
+    .reservas-image {
+        margin-bottom: 20px;
+    }
+
+    .reservas-form .inline-inputs {
+        flex-direction: column; /* Coloca os inputs em linhas separadas */
+        gap: 10px;
+    }
+
+    .localizacao .mapa-container iframe {
+        height: 300px; /* Altura menor em telas menores */
+  
+    }
+
+    /* Seção de Localização e Feedback */
+.localizacao-feedback {
+    padding: 70px 0;
+    background-color: #fff;
+}
+
+.localizacao-feedback .container {
+    max-width: 1200px; /* Aumentando a largura máxima para acomodar os dois blocos */
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.localizacao-feedback .section-title {
+    font-size: 2.6em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.localizacao-feedback-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Mapa e carrossel ocuparão metades iguais */
+    gap: 30px;
+    align-items: flex-start; /* Alinhar os itens no topo */
+}
+
+.localizacao-feedback .mapa-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.localizacao-feedback .mapa-container iframe {
+    width: 100%;
+    height: 400px; /* Ajuste a altura conforme necessário */
+    border: 0;
+    border-radius: 8px;
+}
+
+.feedback-carrossel {
+    position: relative; /* Para posicionar os botões de navegação */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-item {
+    display: none; /* Esconde todos os itens por padrão */
+}
+
+.feedback-item.ativo {
+    display: block; /* Exibe o item ativo */
+}
+
+.cliente-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.cliente-foto {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.cliente-nome {
+    font-weight: bold;
+    color: #333;
+}
+
+.avaliacao {
+    color: #ffc107; /* Cor amarela para as estrelas */
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.estrela {
+    margin-right: 5px;
+}
+
+.depoimento {
+    color: #555;
+    line-height: 1.6;
+}
+
+.carrossel-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    transform: translateY(-50%);
+}
+
+.carrossel-nav button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 5px 10px;
+    outline: none;
+}
+
+.carrossel-nav button:hover {
+    color: #e63946;
+}
+
+
+
+footer .container {
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .logo img {
+    height: 7rem; /* Ajuste a altura do logo conforme necessário */
+    width: 11vw;
+ }
+}
+
+@media (max-width: 768px) {
+    .localizacao {
+        padding: 50px 0;
+    }
+
+    .localizacao .container {
+        padding: 20px;
+    }
+
+    .localizacao .section-title {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+
+    .localizacao .mapa-container iframe {
+        height: 300px;
+    }
+
+    .localizacao .endereco p {
+        font-size: 1em;
+        margin-bottom: 8px;
+    }
+
+    .localizacao-feedback-grid {
+        grid-template-columns: 1fr; /* Mapa e carrossel em colunas separadas */
+    }
+
+    .feedback-carrossel {
+        margin-top: 30px;
+    }
+}
+
+/* Media query para telas ainda menores */
+@media (max-width: 480px) {
+    .localizacao .mapa-container iframe {
+        height: 250px;
+    }
+}
