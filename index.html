@@ -1,162 +1,196 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburgueria do Ottis</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Hamburgueria do Ottis</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
-
 <body>
+
     <header>
         <div class="container">
             <div class="logo">
-                <a href="./index.html"><img src="./imagens/logo.png.png" alt=""></a>
-            </div><!-- logo -->
+                <img src="./imagens/logo.png.png" alt="Hamburgueria do Ottis">
+            </div>
             <nav>
-                <ul class="leftside">
-                    <li><a href="">Início</a></li>
-                    <li><a href="">Burgers</a></li>
-                    <li><a href="">Reservas</a></li>
-                    <li><a href="">Contato</a></li>
-                </ul><!-- leftside -->
+                <ul>
+                    <li><a href="#hero">Início</a></li>
+                    <li><a href="#products">Burgers</a></li>
+                    <li><a href="#reservas">Reservas</a></li>
+                    <li><a href="#localizacao-feedback">Localização</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
                 <div class="rightside">
-                    <a href="" class="btn">Fazer pedido</a>
-                </div><!-- rightside -->
-            </nav><!-- barra de navegação -->
+                    <a href="#" class="btn">Login</a>
+                </div>
+            </nav>
             <div class="hamburger-menu">
                 <span></span>
                 <span></span>
-                <span></span>            
+                <span></span>
             </div>
-        </div><!-- container -->
+        </div>
     </header>
-    <section class="hero">
+
+    <section class="hero" id="hero">
         <div class="container">
             <div class="left-content">
-                <h1>Os melhores burguers você encontra aqui!<span>&#128523;</span></h1>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde ex sequi ad alias.
-                </p>
-                <a href="" class="btn">Fazer pedido</a>
+                <h1>Seu <span>Melhor</span> Burger Chegou!</h1>
+                <p>Experimente a explosão de sabores que só Hamburgueria do Ottis pode oferecer. Feito com paixão e os melhores ingredientes.</p>
+                <a href="#products" class="btn">Ver Cardápio</a>
             </div>
         </div>
     </section>
 
-    <main>
+    <main id="products">
         <div class="container">
+            <h2 class="section-title">Nossos Deliciosos Burgers</h2>
+            <p class="section-description">Feitos com ingredientes frescos e a paixão que você merece.</p>
+
             <div class="products-grid">
-                <a href="" class="product-item">
-                    <div class="warning">Promoção</div>
+                <div class="product-item"
+                     data-name="Classic Burger"
+                     data-category="Clássicos"
+                     data-price="35.90"
+                     data-description="Três discos de carne smash, queijo cheddar, bacon crocante e maionese defumada no pão brioche. Uma explosão de sabor em cada mordida.">
                     <div class="photo">
-                        <img src="./imagens/bacon-duplo.jpg" alt="hamburguer">
+                        <img src="./imagens/triplo-burguer.webp" alt="Classic Burger">
+                        <div class="warning">Novo!</div>
                     </div>
                     <div class="info">
-                        <div class="product-category">Tradicional</div>
-                        <div class="product-name">Big Cheddar Bacon</div>
-                        <div class="product-price">R$ 24,90</div>
+                        <p class="product-category">Especiais</p>
+                        <h3 class="product-name">Triplo Burger</h3>
+                        <p class="product-price">R$ 49,90</p>
                     </div>
-                </a>
-                <a href="" class="product-item">
+                </div>
+
+                <div class="product-item"
+                     data-name="Smash Deluxe"
+                     data-category="Especiais"
+                     data-price="42.50"
+                     data-description="Dois discos de carne smash, queijo prato, bacon crocante, cebola caramelizada e maionese defumada no pão brioche. Uma explosão de sabor em cada mordida.">
                     <div class="photo">
-                        <img src="./imagens/cheddar.jpg" alt="hamburguer">
+                        <img src="./imagens/bacon-duplo2.jpg" alt="Smash Deluxe">
+                        </div>
+                    <div class="info">
+                        <p class="product-category">Especiais</p>
+                        <h3 class="product-name">Bacon Duplo</h3>
+                        <p class="product-price">R$ 42,50</p>
+                    </div>
+                </div>
+
+                <div class="product-item"
+                     data-name="Cheddar burguer"
+                     data-category="Clássicos"
+                     data-price="38.00"
+                     data-description="Nosso suculento hambúrguer de carne 100% bovina, muito queijo cheddar derretido e nosso molho especial, tudo em um pão brioche macio. A escolha perfeita para os amantes de cheddar.">
+                    <div class="photo">
+                        <img src="./imagens/cheddar.jpg" alt="Chicken Crispy">
+                        </div>
+                    <div class="info">
+                        <p class="product-category">Clássicos</p>
+                        <h3 class="product-name">Cheddar burguer</h3>
+                        <p class="product-price">R$ 38,00</p>
+                    </div>
+                </div>
+
+                <div class="product-item"
+                     data-name="Ottis Burguer"
+                     data-category="Clássicos"
+                     data-price="39.90"
+                     data-description="Nosso suculento hambúrguer de carne 100% bovina, queijo prato derretido, alface fresca, tomate e nosso molho especial, tudo em um pão brioche macio. A escolha perfeita para os amantes do tradicional.">
+                    <div class="photo">
+                        <img src="./imagens/classico.jpg" alt="Veggie Delight">
+                        <div class="warning">Mais Vendido!</div>
                     </div>
                     <div class="info">
-                        <div class="product-category">Gourmet</div>
-                        <div class="product-name">Smash BBQ</div>
-                        <div class="product-price">R$ 28,90</div>
+                        <p class="product-category">Clássicos</p>
+                        <h3 class="product-name">Ottis Burguer</h3>
+                        <p class="product-price">R$ 39,90</p>
                     </div>
-                </a>
-                <a href="" class="product-item">
+                </div>
+
+                <div class="product-item"
+                     data-name="Chicken Crispy"
+                     data-category="Aves"
+                     data-price="39.90"
+                     data-description="Tenro filé de frango empanado e crocante, salada coleslaw, picles e molho honey mustard no pão de gergelim. Uma opção leve e saborosa.">
                     <div class="photo">
-                        <img src="./imagens/classico.jpg" alt="hamburguer">
+                        <img src="./imagens/chicken-burguer.jpg" alt="Veggie Delight">
+                        <div class="warning">Aves!!</div>
                     </div>
                     <div class="info">
-                        <div class="product-category">Clássico</div>
-                        <div class="product-name">Clássico do Ottis</div>
-                        <div class="product-price">R$ 26,50</div>
+                        <p class="product-category">Aves</p>
+                        <h3 class="product-name">Chicken Crispy</h3>
+                        <p class="product-price">R$ 39,90</p>
                     </div>
-                </a>
-                <a href="" class="product-item">
+                </div>
+
+                <div class="product-item"
+                     data-name="Veggie Delight"
+                     data-category="Vegetarianos"
+                     data-price="39.90"
+                     data-description="Hambúrguer de grão de bico caseiro, abacate, rúcula, tomate cereja e molho de iogurte no pão integral. Sabor e saúde em perfeita harmonia.">
                     <div class="photo">
-                        <img src="./imagens/chicken-burguer.jpg" alt="hamburguer">
+                        <img src="./imagens/vegano.jpg" alt="Veggie Delight">
+                        <div class="warning">Vegano!</div>
                     </div>
                     <div class="info">
-                        <div class="product-category">Frango</div>
-                        <div class="product-name">Crispy Chicken Supreme</div>
-                        <div class="product-price">R$ 23,90</div>
+                        <p class="product-category">Vegetarianos</p>
+                        <h3 class="product-name">Burguer Vegano</h3>
+                        <p class="product-price">R$ 39,90</p>
                     </div>
-                </a>
-                <a href="" class="product-item">
-                    <div class="photo">
-                        <img src="./imagens/vegano.jpg" alt="hamburguer">
-                    </div>
-                    <div class="info">
-                        <div class="product-category">Vegetariano</div>
-                        <div class="product-name">Veggie Special</div>
-                        <div class="product-price">R$ 21,90</div>
-                    </div>
-                </a>
-                <a href="" class="product-item">
-                    <div class="photo">
-                        <img src="./imagens/bacon-duplo.jpg" alt="hamburguer">
-                    </div>
-                    <div class="info">
-                        <div class="product-category">Picante</div>
-                        <div class="product-name">Spicy Jalapeño Blast</div>
-                        <div class="product-price">R$ 27,50</div>
-                    </div>
-                </a>
+                </div>
             </div>
         </div>
     </main>
 
-    <section class="reservas">
+    <section class="reservas" id="reservas">
         <div class="container reservas-grid">
             <div class="reservas-image">
-                <img src="./imagens/local.webp" alt="Imagem do nosso restaurante">
+                <img src="./imagens/local.webp" alt="Mesa de restaurante aconchegante">
             </div>
-            <div class="reservas-form-wrapper">
-                <h2 class="section-title">Faça sua Reserva</h2>
-                <p class="section-description">Garanta sua mesa e desfrute dos nossos deliciosos hambúrgueres sem espera!</p>
-                <form class="reservas-form">
-                    <div class="form-group inline-inputs">
+            <div class="reservas-content">
+                <h2 class="section-title">Faça Sua Reserva</h2>
+                <p class="section-description">Garanta sua mesa e desfrute de uma experiência gastronômica inesquecível na Hamburgueria do Ottis.</p>
+
+                <form class="reservas-form" id="formReservas">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tel">Telefone</label>
+                        <input type="tel" id="tel" name="tel" placeholder="(XX) XXXXX-XXXX" required>
+                    </div>
+                    <div class="inline-inputs">
                         <div class="form-subgroup">
-                            <label for="data">Data:</label>
+                            <label for="data">Data</label>
                             <input type="date" id="data" name="data" required>
                         </div>
                         <div class="form-subgroup">
-                            <label for="hora">Hora:</label>
-                            <select id="hora" name="hora" required>
-                                <option value="" disabled selected>Selecione</option>
-                                <option value="12:00">12:00</option>
-                                <option value="12:30">12:30</option>
-                                <option value="13:00">13:00</option>
-                                <option value="19:00">19:00</option>
-                                <option value="19:30">19:30</option>
-                                <option value="20:00">20:00</option>
-                            </select>
-                        </div>
-                        <div class="form-subgroup">
-                            <label for="pessoas">Pessoas:</label>
-                            <input type="number" id="pessoas" name="pessoas" min="1" placeholder="Qtd." required>
-                        </div>
-                    </div>
-                    <div class="form-group inline-inputs">
-                        <div class="form-subgroup">
-                            <label for="nome">Nome:</label>
-                            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
-                        </div>
-                        <div class="form-subgroup">
-                            <label for="telefone">Telefone:</label>
-                            <input type="tel" id="telefone" name="telefone" placeholder="Seu telefone">
+                            <label for="hora">Hora</label>
+                            <input type="time" id="hora" name="hora" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+                        <label for="pessoas">Número de Pessoas</label>
+                        <select id="pessoas" name="pessoas" required>
+                            <option value="">Selecione</option>
+                            <option value="1">1 Pessoa</option>
+                            <option value="2">2 Pessoas</option>
+                            <option value="3">3 Pessoas</option>
+                            <option value="4">4 Pessoas</option>
+                            <option value="5">5 Pessoas</option>
+                            <option value="6">6+ Pessoas</option>
+                        </select>
                     </div>
                     <button type="submit" class="btn">Reservar Agora</button>
                 </form>
@@ -164,111 +198,138 @@
         </div>
     </section>
 
-    <section class="localizacao-feedback">
-    <div class="container">
-        <h2 class="section-title">Onde nos encontrar e o que dizem de nós</h2>
-        <div class="localizacao-feedback-grid">
-            <div class="mapa-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.0916185318156!2d-38.47833532625098!3d-3.7902279434872215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c7458e0d298b81%3A0xf5bd8216a33ca105!2sR.%20Rangel%20Pestana%2C%201259%20-%20Lagoa%20Sapiranga%20(Coit%C3%A9)%2C%20Fortaleza%20-%20CE%2C%2060833-012!5e0!3m2!1spt-BR!2sbr!4v1747073240470!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <div class="feedback-carrossel">
-                <div class="feedback-item ativo">
-                    <div class="cliente-info">
-                        <img src="./imagens/pessoa.webp" alt="Foto do Cliente 1" class="cliente-foto">
-                        <div class="cliente-nome">Cliente Feliz 1</div>
-                    </div>
-                    <div class="avaliacao">
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9734;</span>
-                        <span class="estrela">&#9734;</span>
-                    </div>
-                    <p class="depoimento">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+    <section class="localizacao-feedback" id="localizacao-feedback">
+        <div class="container">
+            <h2 class="section-title">Onde Estamos & O Que Dizem Nossos Clientes</h2>
+            <div class="localizacao-feedback-grid">
+                <div class="mapa-container">
+                    <h3>Nossa Localização</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.0916185707524!2d-38.48037383034265!3d-3.7902279350284984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c7458e0d298b81%3A0xf5bd8216a33ca105!2sR.%20Rangel%20Pestana%2C%201259%20-%20Lagoa%20Sapiranga%20(Coit%C3%A9)%2C%20Fortaleza%20-%20CE%2C%2060833-012!5e0!3m2!1spt-BR!2sbr!4v1748454642258!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <div class="feedback-item">
-                    <div class="cliente-info">
-                        <img src="./imagens/pessoa.webp" alt="Foto do Cliente 2" class="cliente-foto">
-                        <div class="cliente-nome">Cliente Satisfeito 2</div>
+
+                <div class="feedback-carrossel">
+                    <h3>O que Nossos Clientes Dizem</h3>
+                    <div class="feedback-item ativo">
+                        <div class="cliente-info">
+                            <img src="./imagens/pessoa.webp" alt="Foto do Cliente 1" class="cliente-foto">
+                            <p class="cliente-nome">Maria Silva</p>
+                        </div>
+                        <div class="avaliacao">
+                            <span class="estrela">★</span><span class="estrela">★</span><span class="estrela">★</span><span class="estrela">★</span><span class="estrela">★</span>
+                        </div>
+                        <p class="depoimento">"O hambúrguer Classic Burger é simplesmente o melhor que já comi! A carne suculenta e o molho especial são imbatíveis. E o atendimento é sempre impecável. Recomendo muito!"</p>
                     </div>
-                    <div class="avaliacao">
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9734;</span>
+
+                    <div class="feedback-item">
+                        <div class="cliente-info">
+                            <img src="./imagens/pessoa.webp" alt="Foto do Cliente 2" class="cliente-foto">
+                            <p class="cliente-nome">João Santos</p>
+                        </div>
+                        <div class="avaliacao">
+                            <span class="estrela">★</span><span class="estrela">★</span><span class="estrela">★</span><span class="estrela">★</span><span class="estrela">☆</span>
+                        </div>
+                        <p class="depoimento">"Sempre peço o Smash Deluxe e nunca me arrependo! Bacon crocante e cebola caramelizada combinam perfeitamente. O ambiente também é muito legal e a cerveja sempre gelada."</p>
                     </div>
-                    <p class="depoimento">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-                <div class="feedback-item">
-                    <div class="cliente-info">
-                        <img src="./imagens/pessoa.webp" alt="Foto do Cliente 3" class="cliente-foto">
-                        <div class="cliente-nome">Super Fã Feliz 3</div>
+
+                    <div class="feedback-item">
+                        <div class="cliente-info">
+                            <img src="./imagens/pessoa.webp" alt="Foto do Cliente 3" class="cliente-foto">
+                            <p class="cliente-nome">Ana Oliveira</p>
+                        </div>
+                        <div class="avaliacao">
+                            <span class="estrela">★</span><span class="estrela">★</span><span class="estrela">★</span><span class="estrela">★</span><span class="estrela">★</span>
+                        </div>
+                        <p class="depoimento">"Fiquei surpresa com o Veggie Delight! Saboroso e super leve, é uma ótima opção para quem busca algo diferente. A qualidade dos ingredientes é notável. Voltarei mais vezes!"</p>
                     </div>
-                    <div class="avaliacao">
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9733;</span>
+
+                    <div class="carrossel-nav">
+                        <button class="prev-btn">❮</button>
+                        <button class="next-btn">❯</button>
                     </div>
-                    <p class="depoimento">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasa.</p>
-                </div>
-                <div class="carrossel-nav">
-                    <button class="prev-btn">&#10094;</button>
-                    <button class="next-btn">&#10095;</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-    <div class="container">
-        <div class="footer-col">
-            <div class="logo">
-                <img src="./imagens/logo.png.png" alt="Logo da Hamburgueria">
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-col">
+                <div class="logo">
+                    <img src="./imagens/logo.png.png" alt="Logo da Hamburgueria KL Burgers">
+                </div>
+                <p>Os hambúrgueres mais suculentos da cidade! Venha nos visitar e saborear a diferença.</p>
+                <div class="social-icons">
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
             </div>
-            <p>Os hambúrgueres mais suculentos da cidade. Venha nos visitar e experimentar!</p>
-            <div class="social-icons">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+
+            <div class="footer-col">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="#hero">Início</a></li>
+                    <li><a href="#products">Burgers</a></li>
+                    <li><a href="#reservas">Reservas</a></li>
+                    <li><a href="#localizacao-feedback">Localização</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <p>Rua Rangel Pestana, 1259 <br> Sapiranga, Fortaleza - CE</p>
+                <p>Telefone: <a href="tel:(85) 99431-0683" style="color: inherit; text-decoration: none;">(85) 98765-4321</a></p>
+                <p>Email: <a href="#" style="color: inherit; text-decoration: none;">Hamburgueriadoottis@gmail.com</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Horário de Funcionamento</h4>
+                <p><strong>Segunda a Sexta:</strong> 18:00 - 23:00</p>
+                <p><strong>Sábado e Domingo:</strong> 12:00 - 23:00</p>
+                <p>Feriados: Consulte</p>
             </div>
         </div>
 
-        <div class="footer-col">
-            <h4>Links Rápidos</h4>
-            <ul>
-                <li><a href="#hero">Início</a></li>
-                <li><a href="#products">Burgers</a></li>
-                <li><a href="#reservas">Reservas</a></li>
-                <li><a href="#localizacao-feedback">Localização</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hamburgueria do Ottis. Todos os direitos reservados.</p>
+            <p>Desenvolvido por <a href="italo.com" target="_blank" style="color: inherit; text-decoration: none;">Dev Italo Costa</a></p>
         </div>
+    </footer>
 
-        <div class="footer-col">
-            <h4>Contato</h4>
-            <p>Rua Rangel Pestana, 123 <br> Sapi, Fortaleza - CE</p>
-            <p>Telefone: (XX) XXXXX-XXXX</p>
-            <p>Email: hamburgueriadoottis@gmail.com</p>
-        </div>
-
-        <div class="footer-col">
-            <h4>Horário de Funcionamento</h4>
-            <p><strong>Segunda a Sexta:</strong> 18:00 - 23:00</p>
-            <p><strong>Sábado e Domingo:</strong> 12:00 - 23:00</p>
-            <p>Feriados: Consulte</p>
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Confirmar Reserva</h2>
+            <p>Você tem certeza que deseja confirmar esta reserva?</p>
+            <div class="modal-buttons">
+                <button id="confirmYes" class="btn modal-btn-yes">Sim, Confirmar</button>
+                <button id="confirmNo" class="btn modal-btn-no">Cancelar</button>
+            </div>
         </div>
     </div>
-    <div class="footer-bottom">
-        <p>&copy; 2025 Hamburgueria do Ottis. Todos os direitos reservados.</p>
-        <p>Desenvolvido por <a href="https://github.com/Italodacostaa">Dev Italo Costa</a>
+
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="messageTitle"></h2>
+            <p id="messageText"></p>
+            <button id="messageOk" class="btn">OK</button>
+        </div>
     </div>
-</footer>
 
+    <div id="productDescriptionModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <img id="modalProductImage" src="" alt="Imagem do Produto" class="modal-product-image">
+            <h2 id="modalProductName"></h2>
+            <p id="modalProductCategory"></p>
+            <p id="modalProductPrice"></p>
+            <p id="modalProductDescription"></p>
+            <button class="btn add-to-cart-btn">Adicionar ao Carrinho</button>
+        </div>
+    </div>
 
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>

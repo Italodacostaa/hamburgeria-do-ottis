@@ -2,12 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Rock+Salt&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rock+Salt&display=swap');
 
-
 /* Estilos globais */
 * {
-    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura total */
-    margin: 0; /* Remove margens padrão */
-    padding: 0; /* Remove preenchimento padrão */
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura/altura */
 }
 
 body {
@@ -17,7 +14,7 @@ body {
     background-color: #272727; /* Um fundo levemente acinzentado */
     color: #333; /* Cor de texto padrão */
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada no body */
 }
 
 .container {
@@ -41,6 +38,24 @@ body {
     background-color: #c42e39; /* Um tom mais escuro no hover */
 }
 
+.section-title {
+    font-size: 2.8em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: 'Luckiest Guy', cursive; /* Fonte estilizada para títulos principais */
+}
+
+.section-description {
+    font-size: 1.1em;
+    color: #666;
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Cabeçalho */
 header {
     background-color: #fff;
@@ -56,8 +71,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap; /* Garante que os itens não quebrem para a próxima linha */
-    padding: 0 20px; /* Espaçamento interno do cabeçalho */
+    height: 150%; /* Garante que o container ocupe toda a altura do cabeçalho */
 }
 
 header .logo img {
@@ -124,7 +138,7 @@ nav .rightside .btn {
 /* Seção Hero */
 .hero {
     padding: 80px 0;
-    background-image: url('./imagens/hamburguer.jpeg');
+    background-image: url(./imagens/hamburguer.jpeg); /* Ajuste o caminho da imagem se necessário */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -180,6 +194,7 @@ main {
     color: inherit; /* Herda a cor do texto do pai */
     transition: transform 0.3s ease-in-out; /* Efeito de leve elevação ao passar o mouse */
     position: relative;
+    cursor: pointer; /* Indica que é clicável */
 }
 
 .product-item:hover {
@@ -266,6 +281,7 @@ main {
     height: 27rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
 }
 
 .reservas .section-title {
@@ -306,6 +322,7 @@ main {
 .reservas-form input[type="email"],
 .reservas-form input[type="tel"],
 .reservas-form input[type="date"],
+.reservas-form input[type="time"], /* Adicionado input type time */
 .reservas-form input[type="number"],
 .reservas-form select {
     width: 100%;
@@ -344,67 +361,14 @@ main {
     background-color: #c42e39;
 }
 
-/* Seção de Localização */
-.localizacao {
-    padding: 70px 0;
-    background-color: #dddddd; /* Mantendo o fundo branco para consistência */
-}
-
-.localizacao .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 30px;
-    text-align: center;
-    border-radius: 8px; /* Adicionando um pouco de borda arredondada ao container */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Uma sombra mais suave e moderna */
-    background-color: #f9f9f9; /* Mantendo o fundo levemente acinzentado */
-}
-
-.localizacao .section-title {
-    font-size: 2.4em; /* Ligeiramente maior para destaque */
-    color: #333;
-    margin-bottom: 25px;
-}
-
-.localizacao .mapa-container {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* Sombra mais definida para o mapa */
-    margin-bottom: 30px; /* Aumentando o espaço abaixo do mapa */
-}
-
-.localizacao .mapa-container iframe {
-    width: 100%;
-    height: 450px; /* Aumentando um pouco a altura padrão */
-    border: 0;
-    border-radius: 8px; /* Mantendo a borda arredondada no iframe também */
-}
-
-.localizacao .endereco {
-    color: #555;
-    line-height: 1.7; /* Ajustando a altura da linha para melhor leitura */
-    margin-top: 20px; /* Adicionando espaço acima do endereço */
-}
-
-.localizacao .endereco p {
-    margin-bottom: 10px; /* Espaçamento entre os parágrafos do endereço */
-    font-size: 1.05em; /* Ligeiramente maior para melhor legibilidade */
-}
-
-.localizacao .endereco strong {
-    font-weight: bold;
-    color: #e63946; /* Usando a cor primária para destacar informações importantes */
-}
-
+/* Seção de Localização e Feedback */
 .localizacao-feedback {
     padding: 70px 0;
-    background-color: #f3f1f1;
+    background-color: #fff;
 }
 
 .localizacao-feedback .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 20px; /* Ajustado para ser mais seguro em mobile */
 }
 
 .localizacao-feedback .section-title {
@@ -413,6 +377,7 @@ main {
     text-align: center;
     margin-bottom: 30px;
 }
+
 .localizacao-feedback-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -424,7 +389,7 @@ main {
     width: 100%;
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 3px 8px rgb(0, 0, 0, 0.15);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
 .localizacao-feedback .mapa-container iframe {
@@ -434,6 +399,29 @@ main {
     border-radius: 8px;
 }
 
+.localizacao-feedback .mapa-container h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.localizacao-feedback .endereco {
+    color: #555;
+    line-height: 1.7;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.localizacao-feedback .endereco p {
+    margin-bottom: 10px;
+    font-size: 1.05em;
+}
+
+.localizacao-feedback .endereco strong {
+    font-weight: bold;
+    color: #e63946;
+}
 
 .feedback-carrossel {
     position: relative; /* Essencial para posicionar os botões de navegação */
@@ -442,17 +430,24 @@ main {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden; /* Garante que os itens que não estão visíveis fiquem escondidos */
-    height: 100%; /* Permite que o carrossel se expanda verticalmente */
+    height: auto; /* Permite que o carrossel se expanda verticalmente */
     display: flex; /* Usamos flexbox para centralizar o conteúdo do item ativo */
     flex-direction: column;
     justify-content: center; /* Centraliza verticalmente o item ativo */
     align-items: center; /* Centraliza horizontalmente o item ativo */
     text-align: center; /* Centraliza o texto do depoimento */
+    min-height: 400px; /* Garante uma altura mínima para o carrossel */
+}
+
+.feedback-carrossel h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 .feedback-item {
     display: none; /* Esconde todos os itens por padrão */
-    /* Remove a posição absoluta para que o flexbox do pai funcione */
     width: 100%; /* Garante que o item ocupe a largura total disponível */
     padding: 0 40px; /* Espaço para os botões de navegação não sobreporem o texto */
     box-sizing: border-box; /* Inclui padding na largura total */
@@ -538,9 +533,7 @@ main {
     border-color: #e63946;
 }
 
-
-
-/* Rodapé */
+/* Rodapé Melhorado */
 footer {
     background-color: #272727; /* Um tom de cinza escuro para contraste */
     color: #f0f0f0; /* Cor de texto mais clara para o fundo escuro */
@@ -634,12 +627,191 @@ footer .logo img {
     font-size: 0.85em;
 }
 
-/* Media Queries para Responsividade */
-@media (max-width: 768px) {
-    header .container {
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: nowrap;
+/* Estilos para os Modais (Confirm/Message/Product) */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fica fixo na tela */
+    z-index: 1000; /* Acima de todo o resto */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Habilita rolagem se o conteúdo for muito grande */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+    display: flex; /* Usar flexbox para centralizar */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    opacity: 0; /* Começa invisível */
+    visibility: hidden; /* Esconde completamente */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Transição suave */
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto; /* Centraliza com margin auto */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%; /* Largura padrão */
+    max-width: 500px; /* Largura máxima */
+    text-align: center; /* Centraliza o texto */
+    position: relative; /* Para o botão de fechar */
+    transform: translateY(-20px); /* Efeito de entrada */
+    transition: transform 0.3s ease;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+.modal-content h2 {
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #e63946; /* Cor primária no hover */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaço entre os botões */
+    margin-top: 20px;
+}
+
+.modal-btn-yes,
+.modal-btn-no,
+#messageOk {
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.modal-btn-yes {
+    background-color: #e63946; /* Cor primária */
+    color: #fff;
+    border: 2px solid #e63946;
+}
+
+.modal-btn-yes:hover {
+    background-color: #c42e39;
+    border-color: #c42e39;
+}
+
+.modal-btn-no {
+    background-color: #ccc; /* Cinza para cancelar */
+    color: #333;
+    border: 2px solid #ccc;
+}
+
+.modal-btn-no:hover {
+    background-color: #bbb;
+    border-color: #bbb;
+}
+
+#messageOk {
+    background-color: #e63946; /* Mesmo estilo do botão de confirmar */
+    color: #fff;
+    border: none;
+    padding: 12px 40px;
+}
+
+#messageOk:hover {
+    background-color: #c42e39;
+}
+
+/* Estilos para o Modal de Descrição do Produto */
+#productDescriptionModal .modal-content {
+    max-width: 600px; /* Um pouco mais largo para a descrição */
+}
+
+.modal-product-image {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1); /* Ajustado a sombra */
+}
+
+#modalProductName {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#modalProductCategory {
+    font-size: 1.1em;
+    color: #777;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+#modalProductPrice {
+    font-size: 1.6em;
+    color: #e63946;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#modalProductDescription {
+    font-size: 1.05em;
+    color: #555;
+    line-height: 1.7;
+    text-align: left; /* Alinha o texto da descrição à esquerda */
+    margin-bottom: 25px;
+}
+
+.add-to-cart-btn {
+    background-color: #e63946;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #c42e39;
+}
+
+/* Media Queries para Responsividade Geral */
+@media (max-width: 600px) {
+    header .logo img {
+        height: 6rem;
+        width: 25vw;
     }
 
     nav {
@@ -687,11 +859,6 @@ footer .logo img {
         margin-top: 15px;
     }
 
-    header .logo img {
-        height: 6rem; /* Ajuste a altura do logo conforme necessário */
-        width: 25vw;
-    }
-
     .hamburger-menu {
         display: flex;
     }
@@ -706,158 +873,107 @@ footer .logo img {
         margin-bottom: 30px;
     }
 
+    /* Ajustes para a seção de reservas em telas pequenas */
     .reservas-grid {
-        grid-template-columns: 1fr; /* Volta para uma coluna */
+        grid-template-columns: 1fr;
+        padding: 15px; /* Reduzido padding */
     }
 
-    .reservas-image {
-        margin-bottom: 20px;
+    .reservas-image img {
+        height: auto; /* Deixa a altura automática para não estourar */
+        margin-top: 0;
     }
 
-    .reservas-form .inline-inputs {
-        flex-direction: column; /* Coloca os inputs em linhas separadas */
+    /* Ajustes para a seção de Localização e Feedback */
+    .localizacao-feedback .section-title {
+        font-size: 2em; /* Título menor para mobile */
+    }
+
+    .localizacao-feedback-grid {
+        grid-template-columns: 1fr; /* Stacked layout */
+        gap: 20px; /* Menor gap */
+        padding: 0 15px; /* Ajuste o padding do grid para telas pequenas */
+    }
+
+    .localizacao-feedback .mapa-container iframe {
+        height: 250px; /* Altura do mapa ajustada */
+    }
+
+    .feedback-carrossel {
+        padding: 20px; /* Menor padding interno */
+        margin-top: 20px; /* Espaço entre mapa e carrossel */
+        min-height: 350px; /* Ajusta altura mínima para caber o conteúdo */
+    }
+
+    .feedback-item {
+        padding: 0 10px; /* Menor padding para o texto do depoimento */
+    }
+
+    .carrossel-nav button {
+        width: 30px; /* Botões menores */
+        height: 30px;
+        font-size: 1.2em; /* Seta menor */
+    }
+
+    .cliente-foto {
+        width: 60px; /* Foto menor */
+        height: 60px;
+    }
+
+    .depoimento {
+        font-size: 1em; /* Depoimento menor */
+    }
+
+    /* Responsividade dos Modais */
+    .modal-content {
+        padding: 20px;
+        width: 95%; /* Um pouco mais largo em mobile */
+    }
+
+    .modal-content h2 {
+        font-size: 1.5em;
+    }
+
+    .modal-content p {
+        font-size: 1em;
+    }
+
+    .modal-buttons {
+        flex-direction: column; /* Botões empilhados */
         gap: 10px;
     }
 
-    .localizacao .container{
-        padding: 20px;
+    .modal-btn-yes,
+    .modal-btn-no,
+    #messageOk {
+        width: 100%; /* Ocupa a largura total */
+        padding: 10px 20px;
     }
 
-    .localizacao .section-title {
-        font-size: 2em; /* Diminuindo o tamanho do título */
-        margin-bottom: 15px;
+    /* Responsividade para o Modal de Descrição (continuando no 600px) */
+    .modal-product-image {
+        height: 180px; /* Altura menor em mobile */
     }
 
-    .localizacao .mapa-container iframe {
-        height: 300px; /* Altura menor em telas menores */
+    #modalProductName {
+        font-size: 1.8em;
     }
 
-    .localizacao .endereco p {
-        font-size: 1em; /* Diminuindo o tamanho da fonte do endereço */
-        margin-bottom: 8px; /* Diminuindo o espaçamento entre os parágrafos */
+    #modalProductPrice {
+        font-size: 1.4em;
     }
 
-    /* Seção de Localização e Feedback */
-.localizacao-feedback {
-    padding: 70px 0;
-    background-color: #fff;
-}
+    #modalProductDescription {
+        font-size: 0.95em;
+        text-align: center; /* Centraliza a descrição em mobile */
+    }
 
-.localizacao-feedback .container {
-    max-width: 1200px; /* Aumentando a largura máxima para acomodar os dois blocos */
-    margin: 0 auto;
-    padding: 30px;
-}
+    .add-to-cart-btn {
+        width: 100%;
+    }
 
-.localizacao-feedback .section-title {
-    font-size: 2.6em;
-    color: #333;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.localizacao-feedback-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Mapa e carrossel ocuparão metades iguais */
-    gap: 30px;
-    align-items: flex-start; /* Alinhar os itens no topo */
-}
-
-.localizacao-feedback .mapa-container {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-}
-
-.localizacao-feedback .mapa-container iframe {
-    width: 100%;
-    height: 400px; /* Ajuste a altura conforme necessário */
-    border: 0;
-    border-radius: 8px;
-}
-
-.feedback-carrossel {
-    position: relative; /* Para posicionar os botões de navegação */
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-top: 30px;
-}
-
-.feedback-item {
-    display: none; /* Esconde todos os itens por padrão */
-}
-
-.feedback-item.ativo {
-    display: block; /* Exibe o item ativo */
-}
-
-.cliente-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.cliente-foto {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 15px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.cliente-nome {
-    font-weight: bold;
-    color: #333;
-}
-
-.avaliacao {
-    color: #ffc107; /* Cor amarela para as estrelas */
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-.estrela {
-    margin-right: 5px;
-}
-
-.depoimento {
-    color: #555;
-    line-height: 1.6;
-}
-
-.carrossel-nav {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10px;
-    transform: translateY(-50%);
-}
-
-.carrossel-nav button {
-    background: none;
-    border: none;
-    font-size: 1.5em;
-    color: #aaa;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    padding: 5px 10px;
-    outline: none;
-}
-
-.carrossel-nav button:hover {
-    color: #e63946;
-}
-
-
-
-footer .container {
+    /* Rodapé - Mobile */
+    footer .container {
         flex-direction: column; /* Colunas empilhadas em telas menores */
         align-items: center; /* Centraliza os itens */
         text-align: center; /* Centraliza o texto das colunas */
@@ -897,9 +1013,30 @@ footer .container {
     }
 }
 
-/* Media query para telas ainda menores */
-@media (max-width: 480px) {
-    .localizacao .mapa-container iframe {
-        height: 250px;
+/* Ajustes para telas de tablet e mobile maiores */
+@media (max-width: 768px) {
+    /* ... (Mantenha outros ajustes que você já tem para 768px) ... */
+
+    .localizacao-feedback-grid {
+        grid-template-columns: 1fr; /* Ajustado: Mapa e carrossel em colunas separadas */
+        gap: 20px; /* Reduzindo o espaçamento em telas menores */
+    }
+
+    .feedback-carrossel {
+        margin-top: 20px; /* Espaço entre o mapa e o carrossel quando empilhados */
+    }
+
+    /* Ajustes para a seção de reservas (já existente, apenas para referência) */
+    .reservas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reservas-image {
+        margin-bottom: 20px;
+    }
+
+    .reservas-form .inline-inputs {
+        flex-direction: column;
+        gap: 10px;
     }
 }
