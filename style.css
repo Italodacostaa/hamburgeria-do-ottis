@@ -48,7 +48,7 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Uma sombra sutil */
     top: 0;
     z-index: 100; /* Garante que o cabeçalho fique acima de outros elementos */
-    height: 5rem;
+    height: 6rem;
     position: relative;
 }
 
@@ -56,6 +56,8 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: nowrap; /* Garante que os itens não quebrem para a próxima linha */
+    padding: 0 20px; /* Espaçamento interno do cabeçalho */
 }
 
 header .logo img {
@@ -96,7 +98,7 @@ nav ul li a:hover {
 }
 
 nav .rightside .btn {
-    height: 1.5rem;
+    height: 3rem;
     margin-left: 30px;
 }
 
@@ -397,7 +399,7 @@ main {
 
 .localizacao-feedback {
     padding: 70px 0;
-    background-color: #fff;
+    background-color: #f3f1f1;
 }
 
 .localizacao-feedback .container {
@@ -540,21 +542,96 @@ main {
 
 /* Rodapé */
 footer {
-    background-color: #333;
-    color: #fff;
-    padding: 30px 0;
-    text-align: center;
+    background-color: #272727; /* Um tom de cinza escuro para contraste */
+    color: #f0f0f0; /* Cor de texto mais clara para o fundo escuro */
+    padding: 40px 0; /* Aumentando o padding vertical */
+    font-size: 0.95em; /* Ajuste no tamanho da fonte */
 }
 
 footer .container {
     display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas menores */
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start; /* Alinha os itens no topo */
+    text-align: left; /* Alinha o texto à esquerda por padrão */
+    gap: 30px; /* Espaçamento entre as colunas do rodapé */
+}
+
+footer .footer-col {
+    flex: 1; /* Faz as colunas ocuparem espaço igualmente */
+    min-width: 200px; /* Largura mínima para cada coluna antes de quebrar */
+    margin-bottom: 20px; /* Espaçamento inferior para quando as colunas empilharem */
+}
+
+footer .footer-col:last-child {
+    min-width: 250px; /* A última coluna pode ser um pouco maior para o mapa/horário */
+}
+
+footer .footer-col h4 {
+    font-size: 1.3em;
+    color: #e63946; /* Usando a cor primária para os títulos das colunas */
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 8px; /* Espaço para o underline */
+}
+
+footer .footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px; /* Underline sutil */
+    height: 3px;
+    background-color: #e63946;
+}
+
+footer .footer-col p,
+footer .footer-col ul li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+footer .footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer .footer-col ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .footer-col ul li a:hover {
+    color: #e63946; /* Mudar cor no hover */
+}
+
+footer .social-icons a {
+    color: #f0f0f0;
+    font-size: 1.5em;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #e63946;
 }
 
 footer .logo img {
-    height: 7rem; /* Ajuste a altura do logo conforme necessário */
-    width: 11vw;
+    height: 8rem; /* Ajustado um pouco maior para destaque */
+    width: auto; /* Deixa a largura automática para manter proporção */
+    margin-bottom: 20px; /* Espaço abaixo do logo */
+}
+
+/* Informações de direitos autorais */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Uma linha divisória sutil */
+    color: #b0b0b0; /* Cor mais suave para o texto de copyright */
+    font-size: 0.85em;
 }
 
 /* Media Queries para Responsividade */
@@ -681,7 +758,7 @@ footer .logo img {
 
 .localizacao-feedback-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Mapa e carrossel ocuparão metades iguais */
+    grid-template-columns: 1fr; /* Mapa e carrossel ocuparão metades iguais */
     gap: 30px;
     align-items: flex-start; /* Alinhar os itens no topo */
 }
@@ -706,6 +783,7 @@ footer .logo img {
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
 }
 
 .feedback-item {
@@ -780,14 +858,43 @@ footer .logo img {
 
 
 footer .container {
-    flex-direction: column;
-    align-items: center;
-}
+        flex-direction: column; /* Colunas empilhadas em telas menores */
+        align-items: center; /* Centraliza os itens */
+        text-align: center; /* Centraliza o texto das colunas */
+    }
 
-footer .logo img {
-    height: 7rem; /* Ajuste a altura do logo conforme necessário */
-    width: 11vw;
- }
+    footer .footer-col {
+        min-width: auto; /* Remove a largura mínima para flexibilidade */
+        width: 100%; /* Ocupa a largura total */
+        margin-bottom: 30px; /* Mais espaçamento entre as colunas empilhadas */
+    }
+
+    footer .footer-col:last-child {
+        margin-bottom: 0; /* Remove a margem do último item empilhado */
+    }
+
+    footer .footer-col h4 {
+        text-align: center; /* Centraliza o título */
+        margin-bottom: 15px;
+    }
+
+    footer .footer-col h4::after {
+        left: 50%; /* Centraliza o underline */
+        transform: translateX(-50%);
+    }
+
+    footer .logo img {
+        height: 7rem; /* Ajusta a altura do logo para mobile */
+        margin-bottom: 15px;
+    }
+
+    footer .social-icons {
+        margin-top: 15px; /* Espaço para ícones sociais se forem separados */
+    }
+
+    footer .social-icons a {
+        margin: 0 10px; /* Espaçamento entre os ícones */
+    }
 }
 
 /* Media query para telas ainda menores */
