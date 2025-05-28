@@ -7,47 +7,55 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 })
 
-const feedbackItems = document.querySelectorAll('.feedback-item');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    let currentIndex = 0;
+document.addEventListener('DOMContentLoaded', function() {
+    const carrosselContainer = document.querySelector('.feedback-carrossel');
+    const feedbackItems = document.querySelectorAll('.feedback-item');
+    const prevButton = document.querySelector('.prev-btn');
+    const nextButton = document.querySelector('.next-btn');
+    const intervalo = 5000; // Intervalo de 5 segundos entre os slides
+    let indexAtual = 0;
 
-    function showFeedback(index) {
-        feedbackItems.forEach((item, i) => {
-            if (i === index) {
-                item.classList.add('ativo');
-            } else {
-                item.classList.remove('ativo');
-            }
+    function mostrarSlide(index) {
+        feedbackItems.forEach(item => item.classList.remove('ativo'));
+        feedbackItems[index].classList.add('ativo');
+    }
+
+    function proximoSlide() {
+        indexAtual = (indexAtual + 1) % feedbackItems.length;
+        mostrarSlide(indexAtual);
+    }
+
+    function slideAnterior() {
+        indexAtual = (indexAtual - 1 + feedbackItems.length) % feedbackItems.length;
+        mostrarSlide(indexAtual);
+    }
+
+    // Inicializar o primeiro slide
+    mostrarSlide(indexAtual);
+
+    // Avançar automaticamente
+    let autoplayInterval = setInterval(proximoSlide, intervalo);
+
+    // Event listeners para os botões
+    if (prevButton) {
+        prevButton.addEventListener('click', function() {
+            slideAnterior();
+            clearInterval(autoplayInterval); // Parar o autoplay ao interagir
+            autoplayInterval = setInterval(proximoSlide, intervalo); // Reiniciar o autoplay
         });
     }
 
-    function nextFeedback() {
-        currentIndex++;
-        if (currentIndex >= feedbackItems.length) {
-            currentIndex = 0; // Volta para o primeiro se chegar ao final
-        }
-        showFeedback(currentIndex);
+    if (nextButton) {
+        nextButton.addEventListener('click', function() {
+            proximoSlide();
+            clearInterval(autoplayInterval); // Parar o autoplay ao interagir
+            autoplayInterval = setInterval(proximoSlide, intervalo); // Reiniciar o autoplay
+        });
     }
 
-    function prevFeedback() {
-        currentIndex--;
-        if (currentIndex < 0) {
-            currentIndex = feedbackItems.length - 1; // Vai para o último se chegar ao início
-        }
-        showFeedback(currentIndex);
+    // Parar o autoplay ao passar o mouse sobre o carrossel e reiniciar ao sair
+    if (carrosselContainer) {
+        carrosselContainer.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+        carrosselContainer.addEventListener('mouseleave', () => autoplayInterval = setInterval(proximoSlide, intervalo));
     }
-
-    // Exibir o primeiro feedback ao carregar a página
-    showFeedback(currentIndex);
-
-    // Adicionar listeners para os botões de navegação
-    if (prevBtn) {
-        prevBtn.addEventListener('click', prevFeedback);
-    }
-    if (nextBtn) {
-        nextBtn.addEventListener('click', nextFeedback);
-    }
-
-    // Opcional: Carrossel automático
-    // setInterval(nextFeedback, 5000); // Mudar a cada 5 segundos
+});

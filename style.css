@@ -4,6 +4,12 @@
 
 
 /* Estilos globais */
+* {
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura total */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimento padrão */
+}
+
 body {
     font-family: 'Montserrat', sans-serif; /* Uma fonte moderna e legível */
     margin: 0;
@@ -11,6 +17,7 @@ body {
     background-color: #272727; /* Um fundo levemente acinzentado */
     color: #333; /* Cor de texto padrão */
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container {
@@ -338,7 +345,7 @@ main {
 /* Seção de Localização */
 .localizacao {
     padding: 70px 0;
-    background-color: #fff; /* Mantendo o fundo branco para consistência */
+    background-color: #dddddd; /* Mantendo o fundo branco para consistência */
 }
 
 .localizacao .container {
@@ -396,7 +403,6 @@ main {
 .localizacao-feedback .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 30px;
 }
 
 .localizacao-feedback .section-title {
@@ -552,7 +558,7 @@ footer .logo img {
 }
 
 /* Media Queries para Responsividade */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     header .container {
         justify-content: space-between;
         align-items: center;
@@ -636,9 +642,22 @@ footer .logo img {
         gap: 10px;
     }
 
+    .localizacao .container{
+        padding: 20px;
+    }
+
+    .localizacao .section-title {
+        font-size: 2em; /* Diminuindo o tamanho do título */
+        margin-bottom: 15px;
+    }
+
     .localizacao .mapa-container iframe {
         height: 300px; /* Altura menor em telas menores */
-  
+    }
+
+    .localizacao .endereco p {
+        font-size: 1em; /* Diminuindo o tamanho da fonte do endereço */
+        margin-bottom: 8px; /* Diminuindo o espaçamento entre os parágrafos */
     }
 
     /* Seção de Localização e Feedback */
@@ -769,38 +788,6 @@ footer .logo img {
     height: 7rem; /* Ajuste a altura do logo conforme necessário */
     width: 11vw;
  }
-}
-
-@media (max-width: 768px) {
-    .localizacao {
-        padding: 50px 0;
-    }
-
-    .localizacao .container {
-        padding: 20px;
-    }
-
-    .localizacao .section-title {
-        font-size: 2em;
-        margin-bottom: 15px;
-    }
-
-    .localizacao .mapa-container iframe {
-        height: 300px;
-    }
-
-    .localizacao .endereco p {
-        font-size: 1em;
-        margin-bottom: 8px;
-    }
-
-    .localizacao-feedback-grid {
-        grid-template-columns: 1fr; /* Mapa e carrossel em colunas separadas */
-    }
-
-    .feedback-carrossel {
-        margin-top: 30px;
-    }
 }
 
 /* Media query para telas ainda menores */
