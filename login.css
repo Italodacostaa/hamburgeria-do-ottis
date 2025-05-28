@@ -1,0 +1,97 @@
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fica fixo na tela */
+    z-index: 1000; /* Z-index base para todos os modais */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Habilita rolagem se o conteúdo for muito grande */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+    display: flex; /* Usar flexbox para centralizar */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    opacity: 0; /* Começa invisível */
+    visibility: hidden; /* Esconde completamente */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Transição suave */
+}
+
+/* Garante que o modal de mensagem esteja sempre à frente de outros modais abertos */
+#messageModal {
+    z-index: 1001; /* Um z-index maior que os outros modais (1000) */
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-switch-text {
+    margin-top: 20px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.modal-switch-text a {
+    color: #e63946;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.modal-switch-text a:hover {
+    text-decoration: underline;
+}
+
+#loginModal .modal-content,
+#registerModal .modal-content {
+    max-width: 450px; /* Ajuste a largura dos modais de login/cadastro */
+}
+
+#loginForm .form-group,
+#registerForm .form-group {
+    margin-bottom: 15px;
+    text-align: left; /* Alinha labels e inputs à esquerda dentro do formulário */
+}
+
+#loginForm label,
+#registerForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+#loginForm input[type="text"],
+#loginForm input[type="password"],
+#registerForm input[type="text"],
+#registerForm input[type="email"],
+#registerForm input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura */
+}
+
+#loginForm button,
+#registerForm button {
+    margin-top: 20px;
+    width: 100%; /* Botão ocupa a largura total */
+    padding: 12px;
+    font-size: 1.1em;
+}
+
+@media (max-width: 600px) {
+    #loginModal .modal-content,
+    #registerModal .modal-content {
+        padding: 15px;
+        width: 95%;
+    }
+
+    #loginForm button,
+    #registerForm button {
+        padding: 10px;
+        font-size: 1em;
+    }
+}

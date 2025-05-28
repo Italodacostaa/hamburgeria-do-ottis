@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hamburgueria do Ottis</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
@@ -13,12 +14,12 @@
     <header>
         <div class="container">
             <div class="logo">
-                <img src="./imagens/logo.png.png" alt="Hamburgueria do Ottis">
+                <img src="./imagens/logo.png.png" alt="Hamburgueria do Ottis" href="index.html">
             </div>
             <nav>
                 <ul>
-                    <li><a href="#hero">Início</a></li>
-                    <li><a href="#products">Burgers</a></li>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="cardapio.html">Burgers</a></li>
                     <li><a href="#reservas">Reservas</a></li>
                     <li><a href="#localizacao-feedback">Localização</a></li>
                     <li><a href="#contact">Contato</a></li>
@@ -40,7 +41,7 @@
             <div class="left-content">
                 <h1>Seu <span>Melhor</span> Burger Chegou!</h1>
                 <p>Experimente a explosão de sabores que só Hamburgueria do Ottis pode oferecer. Feito com paixão e os melhores ingredientes.</p>
-                <a href="#products" class="btn">Ver Cardápio</a>
+                <a href="cardapio.html" class="btn">Ver Cardápio</a>
             </div>
         </div>
     </section>
@@ -330,6 +331,53 @@
         </div>
     </div>
 
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeLoginModal">×</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginUsername">Usuário</label>
+                    <input type="text" id="loginUsername" name="username" placeholder="Seu usuário" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Senha</label>
+                    <input type="password" id="loginPassword" name="password" placeholder="Sua senha" required>
+                </div>
+                <button type="submit" class="btn">Entrar</button>
+            </form>
+            <p class="modal-switch-text">Não tem uma conta? <a href="#" id="showRegisterModal">Cadastre-se aqui</a></p>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeRegisterModal">×</span>
+            <h2>Cadastro</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerUsername">Usuário</label>
+                    <input type="text" id="registerUsername" name="username" placeholder="Escolha um usuário" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">E-mail</label>
+                    <input type="email" id="registerEmail" name="email" placeholder="Seu melhor e-mail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Senha</label>
+                    <input type="password" id="registerPassword" name="password" placeholder="Crie uma senha" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirmar Senha</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirme sua senha" required>
+                </div>
+                <button type="submit" class="btn">Cadastrar</button>
+            </form>
+            <p class="modal-switch-text">Já tem uma conta? <a href="#" id="showLoginModal">Faça login</a></p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>
